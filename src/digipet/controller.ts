@@ -28,6 +28,17 @@ export function hatchDigipet(): Digipet {
   }
 }
 
+export function rehomeDigipet(): void{
+  let result = getDigipet()
+  if(result == null){
+    throw new Error("Can't rehome a digipet when you dont have one!")
+  }
+
+  else{
+    setDigipet(undefined)
+  }
+}
+
 export function trainDigipet(): void {
 updateDigipetBounded("discipline", 10)
 updateDigipetBounded("happiness", -5)
