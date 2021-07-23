@@ -10,7 +10,7 @@ import app from "../server";
  *  2. training a digipet leads to decreasing happiness
  */
 
-describe.skip("When a user trains a digipet repeatedly, its discipline increases by 10 each time until it eventually maxes out at 100", () => {
+describe("When a user trains a digipet repeatedly, its discipline increases by 10 each time until it eventually maxes out at 100", () => {
   beforeAll(() => {
     // setup: give an initial digipet
     const startingDigipet: Digipet = {
@@ -21,6 +21,7 @@ describe.skip("When a user trains a digipet repeatedly, its discipline increases
     setDigipet(startingDigipet);
   });
 
+ 
   test("GET /digipet informs them that they have a digipet with expected stats", async () => {
     const response = await supertest(app).get("/digipet");
     expect(response.body.message).toMatch(/your digipet/i);
@@ -48,7 +49,7 @@ describe.skip("When a user trains a digipet repeatedly, its discipline increases
   });
 });
 
-describe.skip("When a user trains a digipet repeatedly, its happiness decreases by 5 each time until it eventually floors out at 0", () => {
+describe("When a user trains a digipet repeatedly, its happiness decreases by 5 each time until it eventually floors out at 0", () => {
   beforeAll(() => {
     // setup: give an initial digipet
     const startingDigipet: Digipet = {
@@ -86,7 +87,7 @@ describe.skip("When a user trains a digipet repeatedly, its happiness decreases 
   });
 });
 
-describe.skip("When a digipet is maxed out on discipline, it is still possible to train it and decrease its happiness", () => {
+describe("When a digipet is maxed out on discipline, it is still possible to train it and decrease its happiness", () => {
   beforeAll(() => {
     // setup: give an initial digipet
     const startingDigipet: Digipet = {
