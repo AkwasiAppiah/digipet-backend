@@ -81,7 +81,8 @@ app.get("/digipet/walk", (req, res) => {
   if (getDigipet()) {
     walkDigipet();
     res.json({
-      message: "You walked your digipet. It looks happier now!",
+      message: "Walked Digipet",
+      description: "You walked your digipet. It looks happier now!",
       digipet: getDigipet(),
     });
   } else {
@@ -99,7 +100,8 @@ app.get("/digipet/ignore", (req, res) => {
   if (getDigipet()) {
     ignoreDigipet();
     res.json({
-      message: "You ignored your digipet. It looks sadder now!",
+      message: "Ignored Digipet",
+      description: "You ignored your digipet. It looks sadder now!",
       digipet: getDigipet(),
     });
   } else {
