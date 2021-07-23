@@ -55,6 +55,7 @@ app.get("/digipet/hatch", (req, res) => {
     res.json({
       message:
         "You have successfully hatched an adorable new digipet. Just the cutest.",
+      description: "You hatched a digipet",
       digipet,
     });
   }
@@ -72,6 +73,7 @@ app.get("/digipet/rehome", (req, res) => {
     res.json({
       message:
         "You don't have a digipet to rehome!",
+      description: "You don't have a digipet to rehome!"
     });
   }
 });
@@ -106,7 +108,7 @@ app.get("/digipet/ignore", (req, res) => {
     });
   } else {
     res.json({
-      message:
+      description:
         "You don't have a digipet to walk! Try hatching one with /digipet/hatch",
     });
   }
@@ -123,7 +125,7 @@ app.get("/digipet/train", (req, res) => {
     });
   } else {
     res.json({
-      message:
+      description:
         "You don't have a digipet to train! Try hatching one with /digipet/hatch",
     });
   }
@@ -139,7 +141,7 @@ app.get("/digipet/feed", (req, res) => {
     });
   } else {
     res.json({
-      message:
+      description:
         "You don't have a digipet to feed! Try hatching one with /digipet/hatch",
     });
   }
