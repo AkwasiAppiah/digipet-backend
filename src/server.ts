@@ -46,7 +46,8 @@ app.get("/digipet/hatch", (req, res) => {
   const digipet = getDigipet();
   if (digipet) {
     res.json({
-      message: "You can't hatch a digipet now because you already have one!",
+      message: "Error - no digipet",
+      description: "You can't hatch a digipet now because you already have one!",
       digipet,
     });
   } else {
@@ -70,7 +71,8 @@ app.get("/digipet/walk", (req, res) => {
   } else {
     res.json({
       message:
-        "You don't have a digipet to walk! Try hatching one with /digipet/hatch",
+        "Error = no digipet",
+      description: "First Hatch a digipet! "
     });
   }
 });
